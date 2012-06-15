@@ -487,7 +487,7 @@ static void *finishedContext = @"finishedContext";
  * @deprecated Use of a single session delegate, set at app init, is preferred
  */
 - (void)logout:(id<FBSessionDelegate>)delegate {
-  [self logout];
+  [self invalidateSession];
   // preserve deprecated callback behavior, but leave cached delegate intact
   // avoid calling twice if the passed and cached delegates are the same
   if (delegate != self.sessionDelegate &&
